@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Forever ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+overflow:hidden;
+background:linear-gradient(135deg,#2b0613,#5a1028,#a12d5d);
+color:white;
+}
+
+/* FLOATING HEARTS */
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.heart{
+position:absolute;
+bottom:-20px;
+width:18px;
+height:18px;
+background:#ff7aa2;
+transform:rotate(45deg);
+animation:float 8s linear infinite;
+opacity:0.6;
+}
+
+.heart:before,
+.heart:after{
+content:'';
+position:absolute;
+width:18px;
+height:18px;
+background:#ff7aa2;
+border-radius:50%;
+}
+
+.heart:before{
+top:-9px;
+left:0;
+}
+
+.heart:after{
+left:-9px;
+top:0;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) rotate(45deg);
+opacity:0;
+}
+20%{
+opacity:0.6;
+}
+100%{
+transform:translateY(-120vh) rotate(45deg);
+opacity:0;
+}
+}
+
+/* LOCK PAGE */
+
+.lock-page{
+position:absolute;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(
+135deg,
+#12030a,
+#220814,
+#3b0a18
+);
+transition:1s;
+}
+
+.lock-box{
+background:rgba(20, 3, 10, 0.88);
+padding:45px;
+border-radius:28px;
+text-align:center;
+width:90%;
+max-width:430px;
+box-shadow:
+0 0 30px rgba(255, 78, 126, 0.18),
+0 0 60px rgba(255, 105, 180, 0.08);
+border:1px solid rgba(255,255,255,0.06);
+backdrop-filter:blur(14px);
+}
+
+.lock-title{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+margin-bottom:15px;
+color:#ffd1e1;
+}
+
+.riddle{
+line-height:1.8;
+font-size:15px;
+color:#ffe5ee;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:14px;
+border:none;
+outline:none;
+border-radius:14px;
+font-size:16px;
+text-align:center;
+background:rgba(255,255,255,0.06);
+color:#ffe6ef;
+margin-bottom:15px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+input::placeholder{
+color:#c78aa0;
+}
+
+
+button{
+padding:13px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#ff4f87,#ff7aa2);
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.4s;
+box-shadow:0 0 20px rgba(255,105,180,0.25);
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ff2e72;
+}
+
+#msg{
+margin-top:15px;
+color:#ffd0df;
+font-size:14px;
+}
+
+/* MAIN PAGE */
+
+.main{
+display:none;
+overflow-y:auto;
+height:100vh;
+padding:70px 20px;
+scroll-behavior:smooth;
+animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.hero{
+text-align:center;
+margin-bottom:80px;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:78px;
+color:#ffd4e4;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:2;
+font-size:18px;
+color:#ffe7ef;
+}
+
+.section{
+max-width:850px;
+margin:50px auto;
+background:rgba(255,255,255,0.07);
+padding:40px;
+border-radius:28px;
+backdrop-filter:blur(8px);
+box-shadow:0 0 25px rgba(255,192,203,0.08);
+}
+
+.section h2{
+font-family:'Great Vibes',cursive;
+font-size:50px;
+margin-bottom:25px;
+color:#ffd4e4;
+text-align:center;
+}
+
+.section p{
+line-height:2.2;
+font-size:17px;
+color:#fff0f5;
+text-align:center;
+}
+
+.footer{
+text-align:center;
+margin-top:70px;
+padding-bottom:40px;
+font-size:15px;
+color:#ffd7e6;
+}
+
+.glow{
+color:#fff;
+text-shadow:0 0 10px #ff8db4;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- LOCK PAGE -->
+
+<div class="lock-page" id="lockPage">
+
+<div class="lock-box">
+
+<div class="riddle">
+This is for you Jaana <br>
+Lets see if you can crack the lock <br>
+pretty sure you can but still ;p <br>
+💖
+</div>
+
+<input type="password" id="password" placeholder="Type your answer here">
+
+<button onclick="unlock()">Unlock My Wish</button>
+
+<div id="msg"></div>
+
+</div>
+</div>
+
+<!-- MAIN WEBSITE -->
+
+<div class="main" id="mainContent">
+
+<div class="hero">
+
+<h1>Happy Birthday Jaanuu </h1>
+
+<p>
+Happiest Birthdayy to the one who lives rent free in my heart and mind. My best Friend , My babyyyyyyy , 
+Jaanuuuu sab kuchhhhh jitna likhu kam haii kyuke ap mere liye sab kuch ho or aj jaise ke meri jaaaannnn ka 
+birthdayy haiiiii yayyyyyyyyyyyyyy. 
+I hope this birthday brings you happiness, success, peace, and everything your heart secretly wishes for. 
+Aur selfishly… I hope it brings you closer to me too. 
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>To The Man I Love The Most </h2>
+
+<p>
+Tum sirf meri jaan nahi ho…  
+tum meri aadat ho, mera comfort zone ho, mera sukoon ho, meri muhabbat ho. ❤️<br><br>
+
+You don’t even realize kitna sukoon dete ho mujhe. You became home for me without 
+even being physically here. And that’s rare. Bohat rare. even tho i want to be there 
+for you like physically wala 24/7 tumhare samne rahu or tumhe apne sath rakhu but kiya kar sakte sabar ke ilawa... 
+I know hum physically saath nahi hain today, but trust me, mera poora dil tumhare paas hai. Aur ek din hum yeh 
+birthdays screens ke through nahi, ek dusre ke saath celebrate karenge InshaAllah.
+Happy birthday to the one who makes me happy for no reason, emotional bhii for exactlyyyy nooo reasonss ye bhi 
+koi baat hui bhala lkn chalo maaf kiya mera dil bht barha hai huhhhh. 
+
+ <br><br>
+
+Aur haan… thoda less annoying bhi ho jao iss saal thora sa kam ragebait ya randomly mujhe tang karna
+But not too much, because tumhari stupid si baatein bhi meri favourite hain. Another year older… thore aur mature
+ho gaye ho wowwwwwww .( Thore. Sirf thore. Zyada khush mat hona ya shayad thore bhi ni hue hoge wo to dikh hi jaega 
+kyuke ap jaisa mastikhor ka kuch nhi hosakta or sach batau to mai chahti bhi ni ke ap tuff act karain pretending game
+ apki itni khaas hai ni jitni apko lagti ke haii  )
+<br><br>
+
+Happy Birthday to the one who tolerates my mood swings, overthinking, random emotional breakdowns and those “kuch nahi” moments 
+when clearly bohat kuch hota hai. You deserve an award for that honestly. or aghe bhi please handle karliya karna oki
+ jaanu or waise bhi handle karne ke ilawa koi option hai bhi ni apke pss ohhhooo ( toleration waise hai apki achi manna to parega )
+<br><br>
+
+Happy Birthday to my favorite human being, the most amazing, kindest, cutiest, jaanu babyy ever.
+I love you endlessly and i am all yours completely, utterly and forever …<br><br>
+
+You know what hurts the most today ?
+Ke main tumhare saath nahi hoon.
+I can’t hold your hand, can’t look at you while wishing you, can’t cheer you up the loudest and honestlyy can't give you a kiss
+bigboss ab to mujhe hurt horaha hai . waise kiss def not on your cheekss ( mtlb forehead pe ) khair ap to mere jaanu baby to ho hi 
+to miljaya karegi jaha chahoge lkn itna free nai karwaya to bhool jao jo kaha maineeee oki jaanuuuuuu . ab mai bs chup hojati hu ni
+ to kuch aisa likhdiya to apne ghabra jana haii :p
+<br><br>
+lkn yaar ahsan sahi maii bs bht hogayaa yaaarrrrr bht mushkil hai sabbb mujhe dar lagta hai sb cheezo se ab itni emotional attachment 
+haike mai bata bhi ni saktii, yaaaarrr likhte likhte to shyd rona hi ajaye mujhe lkn pata nahi bs har wqt tum chaiye hoo. 
+jaha sochu na ke nahi sochu itna utna or sochne lagjatii or yaad ane lagjatee aise ni hota . kitna control karu maii mujhse 
+ni hopaega mujhe lagta hai, lkn mai karungi apke liye sb karungi kyuke mujhe ab like sahi wala mtlb aik need hoti na wo hai 
+aik physically need haike hn tm meri nazro ke smne raho tumhe dekhti rahun sukoon rahe tumhare liye sb karu tumhari presence hi 
+kaafi hai mere liye . i loveee youuuuu soo soo sooo freaking much ke describe bhi ni hosakta or mai chahti hu ke tmhe pata ho ke han mai 
+hun tumhare sath or rahungi bhi humesha jaanuu or ap jis trha ho jaise ho mujhe pasand ho or isi trha rehnaa exactly jo 
+socha tha usse kayi zydaa better hoto please stayyyyy with mee like forever okiiii deal close . mujhe kaabhi chorh ke nahi jana
+ya thak nahi jana . mujhe pata hai aisa kuch ni hoga lkn please mere liye srf aap ho or ap hi chaiye ho. har waqt yaad rehte hi aisi 
+adat lagwadi haike ni ho bat to dil hi ni lagta kahin lkn situations samjh skti hun mai understanding to bht hun or ni bhi to thori
+acting kar hi lungii itna to mai kar sakti apke liye.bas ap mujhe jaise aaj pyaar muhabbat karte usi tarha aghe bhi karte rehna.. i missss youu much more than enough like koi limit hi ni hai iski to or shyd love 
+se zyda miss karti maii .love to apni jagha hai hi haii lkn miss wala factor thora emotional hain samjha karainn , bakii jaanu
+loveee youu and Happy Birthday Once Againnnn. Allah ta'ala har jaiz dua qabool kare apki or haq mai behtar rakhe apne hifzo amaan mai rakhe
+or apko mujh jaise ( pyaari cutiest smartest bhi chalo kehlo ) insaan se nawaaaz dainnnn ;D
+<br><br>
+I love you in the softest, deepest, most genuine way possible.
+And if I had to choose again, in every lifetime, every universe, every version of life… I would still choose you. Always you. ❤️
+
+<br><br>
+hbd once again meri jaan, bs aajke liye itna kaafi tha :)
+<br><br>
+</p>
+
+</div>
+
+<!--  <div class="section">
+
+<h2>Our Little Story </h2>
+
+<p>
+From random late-night talks  
+to becoming each other’s safe place…  
+we really created something beautiful. <br><br>
+
+Tum meri favourite notification ho.  
+Meri favourite voice.  
+Meri favourite feeling. 💖<br><br>
+
+Even through screens and time zones,  
+you made me feel loved in ways people standing beside me never could.
+</p>
+
+</div> 
+-->
+<!-- 
+<div class="section">
+
+<h2>Birthday Wish </h2>
+
+<p>
+I pray this year brings you happiness, success, peace, and everything your heart secretly wishes for. <br><br>
+
+Aur ek selfish si dua bhi hai meri...  
+that one day this distance finally ends  
+and I get to celebrate your birthday beside you instead of through a screen. ❤️<br><br>
+
+Until then…  
+keep this website as a tiny piece of my heart.
+</p>
+
+</div> -->
+
+<div class="footer">
+Made with endless love for my favorite person 
+</div>
+
+</div>
+
+<script>
+
+/* HEARTS */
+
+for(let i=0;i<35;i++){
+
+let heart=document.createElement('div');
+heart.classList.add('heart');
+
+heart.style.left=Math.random()*100+'vw';
+heart.style.animationDuration=(5+Math.random()*5)+'s';
+heart.style.opacity=Math.random();
+
+document.getElementById('hearts').appendChild(heart);
+
+}
+
+/* LOCK SYSTEM */
+
+function unlock(){
+
+let value=document.getElementById('password').value.toLowerCase().trim();
+
+if(value==="06022025"){
+
+document.getElementById('lockPage').style.opacity='0';
+
+setTimeout(()=>{
+
+document.getElementById('lockPage').style.display='none';
+
+document.body.style.overflow='auto';
+
+document.getElementById('mainContent').style.display='block';
+
+},1000);
+
+}
+
+
+
+}
+
+</script>
+
+</body>
+</html>
